@@ -1,0 +1,20 @@
+CONS of Simple Factory
+
+Why Consider Changing the Simple Factory Approach?
+1. Violation of Open/Closed Principle (OCP)
+
+    In your simpleFactoryCreate method, if a new vehicle type (e.g., Bus) 
+    is added, you must modify the factory method:
+        ```else if (vehicle.compareTo("Bus") == 0)
+            return new Bus();```
+    This is a code smell because every time a new type is added, the factory class changes.
+    This violates OCP since the class isn't closed for modification.
+
+2. Scalability Issues
+    If you have a growing number of vehicle types, the if-else conditions in 
+    simpleFactoryCreate will become harder to manage.
+
+3. Tight Coupling
+
+    Your simpleFactory class knows about all the vehicle types (Car, Bike, Truck).
+    This reduces flexibility and makes it harder to maintain.

@@ -1,0 +1,39 @@
+@startuml
+abstract class Vehicle {
+    - int speed
+    - String fuelType
+    + Vehicle(int, String)
+    + abstract void move()
+    + void displayInfo()
+}
+
+class Car {
+    + Car(int, String)
+    + void move()
+}
+
+class Truck {
+    + Truck(int, String)
+    + void move()
+}
+
+class Bike {
+    + Bike(int, String)
+    + void move()
+}
+
+class VehicleFactory {
+    + static Vehicle createVehicle(String, int, String)
+}
+
+class FactoryWithBestCase {
+    + static void main(String[])
+}
+
+Vehicle <|-- Car
+Vehicle <|-- Truck
+Vehicle <|-- Bike
+VehicleFactory ..> Vehicle : "Creates"
+FactoryWithBestCase ..> VehicleFactory : "Uses"
+
+@enduml

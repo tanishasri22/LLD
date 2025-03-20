@@ -1,0 +1,33 @@
+@startuml
+interface Notification {
+    + void sendNotification(String message)
+}
+
+class EmailNotification {
+    + void sendNotification(String message)
+}
+
+class SMSNotification {
+    + void sendNotification(String message)
+}
+
+class PushNotification {
+    + void sendNotification(String message)
+}
+
+class NotificationFactory {
+    + static Notification createNotification(String type)
+}
+
+class Solution {
+    + static void main(String[] args)
+}
+
+Notification <|.. EmailNotification
+Notification <|.. SMSNotification
+Notification <|.. PushNotification
+
+NotificationFactory ..> Notification : "Creates"
+Solution ..> NotificationFactory : "Uses"
+
+@enduml

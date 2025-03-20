@@ -1,0 +1,9 @@
+Question:
+ Implement a Logger Factory that provides different logging mechanisms 
+ (ConsoleLogger, FileLogger, DatabaseLogger). The factory should allow injecting 
+ dependencies (e.g., file path for FileLogger, database connection for DatabaseLogger).
+
+
+Extension:
+Extend this into a Singleton Factory, ensuring that only one instance of a particular 
+logger type exists.

@@ -1,0 +1,22 @@
+1. Basic Factory Method Implementation
+Question:
+Implement a Factory Method Pattern for creating different types of 
+payments (CreditCardPayment, DebitCardPayment, UPIPayment).
+
+Define a common Payment interface with a method processPayment(amount: float).
+Create concrete classes implementing this interface.
+Implement a PaymentFactory interface with a createPaymentMethod() factory method.
+Provide subclasses (CreditCardFactory, DebitCardFactory, UPIFactory) that override
+createPaymentMethod().
+
+
+Concept Covered:
+
+Basic Factory Method structure with subclass responsibility.
+Decoupling object creation from client code.
+
+
+Extension:
+
+Convert it into an Abstract Factory Pattern where a PaymentServiceFactory 
+provides additional services like getPaymentGateway().

@@ -1,0 +1,10 @@
+2. Factory with Parameterized Objects
+Question:
+Enhance the vehicle factory so that each vehicle type can have additional attributes 
+like speed and fuel type. Modify the factory method to accept these parameters and 
+create vehicles with different configurations.
+
+Extension:
+
+Convert this into an Abstract Factory Pattern where we have a FuelVehicleFactory 
+and ElectricVehicleFactory.

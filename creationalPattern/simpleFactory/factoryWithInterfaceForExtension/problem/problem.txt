@@ -1,0 +1,8 @@
+Question:
+ Create a Simple Factory to generate different types of notification services 
+ (EmailNotification, SMSNotification, PushNotification). Each notification service 
+ should implement a sendNotification(message: string) method.
+
+ 
+Extension:
+Use the Strategy Pattern to allow dynamic selection of notification types at runtime.

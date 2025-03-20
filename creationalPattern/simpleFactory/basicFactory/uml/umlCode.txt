@@ -1,0 +1,34 @@
+//Tool : PlainText
+
+@startuml
+
+' Abstract representation of a Vehicle
+interface Vehicle {
+    + move(): void
+}
+
+' Concrete Vehicle classes
+class Car {
+    + move(): void
+}
+
+class Bike {
+    + move(): void
+}
+
+class Truck {
+    + move(): void
+}
+
+' Factory class to create vehicles
+class VehicleFactory {
+    + createVehicle(type: String): Vehicle
+}
+
+' Relationships with labels
+Vehicle <|-- Car : "implements"
+Vehicle <|-- Bike : "implements"
+Vehicle <|-- Truck : "implements"
+VehicleFactory ..> Vehicle : "creates"
+
+@enduml

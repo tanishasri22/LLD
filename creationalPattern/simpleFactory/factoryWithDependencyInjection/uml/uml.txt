@@ -1,0 +1,43 @@
+@startuml
+
+' Logger interface
+interface Logger {
+    + log(message: String): void
+}
+
+' Concrete Logger classes implementing Logger interface
+class ConsoleLogger {
+    + log(message: String): void
+}
+
+class FileLogger {
+    - filePath: String
+    + FileLogger(filePath: String)
+    + log(message: String): void
+}
+
+class DatabaseLogger {
+    - dbConnection: String
+    + DatabaseLogger(dbConnection: String)
+    + log(message: String): void
+}
+
+' Factory class for creating loggers
+class LoggerFactory {
+    + getLogger(type: String, dependency: String): Logger
+}
+
+' Relationships
+Logger <|-- ConsoleLogger
+Logger <|-- FileLogger
+Logger <|-- DatabaseLogger
+LoggerFactory ..> Logger : "creates"
+
+' Demo class for testing
+class LoggerFactoryDemo {
+    + main(args: String[]): void
+}
+
+LoggerFactoryDemo ..> LoggerFactory : "uses"
+
+@enduml

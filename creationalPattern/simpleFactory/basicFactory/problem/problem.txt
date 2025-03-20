@@ -1,0 +1,4 @@
+Question:
+ Design a Simple Factory to create different types of vehicles (Car, Bike, Truck). 
+ Each vehicle should have a move() method. The factory should take a string as input and 
+ return the appropriate vehicle object.

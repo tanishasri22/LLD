@@ -1,0 +1,47 @@
+@startuml
+
+interface Payment {
+    +processPayment(amount: float): double
+}
+
+class CreditCardPayment implements Payment {
+    +processPayment(amount: float): double
+}
+
+class DebitCardPayment implements Payment {
+    +processPayment(amount: float): double
+}
+
+class UPIPayment implements Payment {
+    +processPayment(amount: float): double
+}
+
+interface PaymentFactory {
+    +createPaymentMethod(): Payment
+}
+
+class CreditCardFactory implements PaymentFactory {
+    +createPaymentMethod(): Payment
+}
+
+class DebitCardFactory implements PaymentFactory {
+    +createPaymentMethod(): Payment
+}
+
+class UPIFactory implements PaymentFactory {
+    +createPaymentMethod(): Payment
+}
+
+class Solution {
+    +main(args: String[]): void
+}
+
+' Association (Composition/Association)
+CreditCardFactory --> CreditCardPayment : "association"
+DebitCardFactory --> DebitCardPayment  : "association"
+UPIFactory --> UPIPayment : "association"
+
+' Dependency (Usage)
+Solution ..> PaymentFactory : "uses"
+
+@enduml

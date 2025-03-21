@@ -1,0 +1,52 @@
+@startuml
+
+interface Payment {
+    + processPayment(amount: float): double
+}
+
+class CreditCard implements Payment {
+    - UPINumber: String
+    + CreditCard(UPINumber: String)
+    + processPayment(amount: float): double
+    + getMaskedUpiNumber(): String
+}
+
+class DebitCard implements Payment {
+    - DebitNumber: String
+    + DebitCard(DebitNumber: String)
+    + processPayment(amount: float): double
+}
+
+class UPIPayment implements Payment {
+    - UPINumber: String
+    + UPIPayment(UPINumber: String)
+    + processPayment(amount: float): double
+}
+
+interface PaymentFactory {
+    + createPaymentMethod(details: String): Payment
+}
+
+class CreditCardPaymentFactory implements PaymentFactory {
+    + createPaymentMethod(UPINumber: String): Payment
+}
+
+class DebitCardPaymentFactory implements PaymentFactory {
+    + createPaymentMethod(UPINumber: String): Payment
+}
+
+class UPIPaymentFactory implements PaymentFactory {
+    + createPaymentMethod(UPINumber: String): Payment
+}
+
+class solution {
+    + main(args: String[]): void
+}
+
+CreditCardPaymentFactory --> CreditCard : "association"
+DebitCardPaymentFactory --> DebitCard : "association"
+UPIPaymentFactory --> UPIPayment : "association"
+
+solution ..> PaymentFactory
+solution ..> Payment
+@enduml

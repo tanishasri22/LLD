@@ -1,0 +1,49 @@
+@startuml
+
+interface DatabaseConnection {
+    + boolean connect()
+    + boolean disconnect()
+}
+
+class PostgreSQLConnection implements DatabaseConnection {
+    + boolean connect()
+    + boolean disconnect()
+}
+
+class MySQLConnection implements DatabaseConnection {
+    + boolean connect()
+    + boolean disconnect()
+}
+
+class MongoDBConnection implements DatabaseConnection {
+    + boolean connect()
+    + boolean disconnect()
+}
+
+interface DatabaseConnectionFactory {
+    + DatabaseConnection createConnection()
+}
+
+class PostgreSQLFactory implements DatabaseConnectionFactory {
+    + DatabaseConnection createConnection()
+}
+
+class MySQLFactory implements DatabaseConnectionFactory {
+    + DatabaseConnection createConnection()
+}
+
+class MongoDBFactory implements DatabaseConnectionFactory {
+    + DatabaseConnection createConnection()
+}
+
+class solution {
+    + static void main(String[] args)
+}
+
+PostgreSQLFactory --> PostgreSQLConnection : "association"
+MySQLFactory --> MySQLConnection : "association"
+MongoDBFactory --> MongoDBConnection : "association"
+
+solution ..> DatabaseConnectionFactory : "uses"
+
+@enduml

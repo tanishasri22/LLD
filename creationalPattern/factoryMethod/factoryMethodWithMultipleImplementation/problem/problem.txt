@@ -1,0 +1,14 @@
+Question:
+ Create a Factory Method pattern for different database connections (PostgreSQLConnection, 
+ MySQLConnection, MongoDBConnection).
+    1. Define a DatabaseConnection interface with connect() and disconnect() methods.
+    2. Implement concrete database classes.
+    3. Create separate factory classes (PostgreSQLFactory, MySQLFactory, MongoDBFactory)
+         that implement the factory method createConnection().
+
+Concept Covered:
+    Using multiple factory classes instead of a single one.
+    Encouraging Open-Closed Principle (OCP).
+
+Extension:
+    Extend this into a Singleton Pattern ensuring only one connection instance per database.

@@ -1,0 +1,10 @@
+Question:
+ Extend the previous example by allowing the createPaymentMethod() to accept 
+ additional parameters (e.g., cardNumber for CreditCardPayment, upiId for UPIPayment).
+ 
+Concept Covered:
+ Adding parameters to Factory Methods to customize object creation.
+ Dynamically choosing configurations based on inputs.
+
+Extension:
+ Implement a Builder Pattern inside each concrete class for complex object creation.

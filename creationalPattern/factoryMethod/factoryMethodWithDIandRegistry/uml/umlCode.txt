@@ -1,0 +1,44 @@
+@startuml
+
+interface Analytics {
+    + tractEvent(event: String)
+}
+
+class GoogleAnalytics implements Analytics {
+    + tractEvent(event: String)
+}
+
+class Mixpanel implements Analytics {
+    + tractEvent(event: String)
+}
+
+class Segment implements Analytics {
+    + tractEvent(event: String)
+}
+
+abstract class AnalyticsFactory {
+    - map: HashMap<String, Analytics>
+    + registeredAnalytics(key: String, value: Analytics): Analytics
+    + createAnalytics(): Analytics
+}
+
+class GoogleAnalyticsFactory extends AnalyticsFactory {
+    + createAnalytics(): Analytics
+}
+
+class MixpanelFactory extends AnalyticsFactory {
+    + createAnalytics(): Analytics
+}
+
+class SegmentFactory extends AnalyticsFactory {
+    + createAnalytics(): Analytics
+}
+
+class Solution {
+    + main(args: String[])
+}
+
+
+Solution ..> AnalyticsFactory : "uses"
+
+@enduml

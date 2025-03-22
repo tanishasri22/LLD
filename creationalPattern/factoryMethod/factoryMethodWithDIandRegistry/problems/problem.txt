@@ -1,0 +1,15 @@
+Factory Method with Dependency Injection & Registry
+Question:
+ 1. Create a Factory Method Pattern to generate analytics engines (GoogleAnalytics, Mixpanel, 
+    Segment). Each engine should implement an Analytics interface with a method trackEvent
+    (event: string).
+ 2. Instead of hardcoding, use a Registry-Based Factory where new analytics engines can be 
+    registered dynamically at runtime.
+
+Concept Covered:
+ 1. Using Dependency Injection with Factory Method.
+ 2. Implementing a Registry-Based Factory for dynamic extensibility.
+
+Extension:
+ Extend this into a Prototype Pattern, allowing analytics engines to be cloned instead 
+ of instantiated repeatedly.

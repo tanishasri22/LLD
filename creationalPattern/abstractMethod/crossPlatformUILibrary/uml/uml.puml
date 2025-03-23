@@ -1,0 +1,69 @@
+@startuml
+interface Button {
+    + printButton()
+}
+
+class MacButton implements Button {
+    + printButton()
+}
+
+class WindowButton implements Button {
+    + printButton()
+}
+
+class LinuxButton implements Button {
+    + printButton()
+}
+
+interface CheckBox {
+    + printCheckBox()
+}
+
+class MacCheckBox implements CheckBox {
+    + printCheckBox()
+}
+
+class WindowCheckBox implements CheckBox {
+    + printCheckBox()
+}
+
+class LinuxCheckBox implements CheckBox {
+    + printCheckBox()
+}
+
+interface GuiFactory {
+    + createButton() : Button
+    + createCheckbox() : CheckBox
+}
+
+class MacOsGuiFactory implements GuiFactory {
+    + createButton() : Button
+    + createCheckbox() : CheckBox
+}
+
+class WindowOsGuiFactory implements GuiFactory {
+    + createButton() : Button
+    + createCheckbox() : CheckBox
+}
+
+class LinuxOsGuiFactory implements GuiFactory {
+    + createButton() : Button
+    + createCheckbox() : CheckBox
+}
+
+class CrossPlatformUI {
+    + main(args: String[])
+}
+
+' Relationships
+
+MacOsGuiFactory --> MacButton
+WindowOsGuiFactory --> WindowButton
+LinuxOsGuiFactory --> LinuxButton
+
+MacOsGuiFactory --> MacCheckBox
+WindowOsGuiFactory --> WindowCheckBox
+LinuxOsGuiFactory --> LinuxCheckBox
+
+CrossPlatformUI ..> GuiFactory : "uses"
+@enduml

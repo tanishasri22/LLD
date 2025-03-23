@@ -1,0 +1,50 @@
+Why abstract factory over factory method?
+
+Factory Method Pattern:
+ 1. The Factory Method is used when you want to create objects from a single family (e.g., only 
+    Button objects but different types like MacButton, WindowButton).
+ 2. You create a single factory that decides which concrete implementation to return.
+ 3. It provides a way to delegate the instantiation to subclasses.
+✅ Best for: When you need variations of one product type.
+
+
+Abstract Factory Pattern:
+ 1. The Abstract Factory is used when you need to create multiple related objects (e.g., both 
+    Button and CheckBox).
+ 2. It provides a family of related objects without specifying their exact concrete classes.
+ 3. Instead of a single factory, we define multiple factories to produce entire sets of objects.
+✅ Best for: When you need to ensure consistent object families.
+
+Why Use Abstract Factory Here?
+ In your case, you need a GUI system that can create both Button and CheckBox objects together.
+ Imagine you only use the Factory Method, then you would need separate factories:
+
+                interface ButtonFactory {
+                    Button createButton();
+                }
+
+                interface CheckBoxFactory {
+                    CheckBox createCheckBox();
+                }
+
+ Now, if you want to ensure that a MacButton always pairs with a MacCheckBox, you would have to 
+ manually coordinate both factories. This can lead to inconsistencies, such as accidentally 
+ using MacButton with WindowsCheckBox.
+
+How Abstract Factory Helps
+ With the Abstract Factory, you encapsulate the logic to create both Button and CheckBox in a 
+ single GuiFactory:
+
+                interface GuiFactory {
+                    Button createButton();
+                    CheckBox createCheckBox();
+                }
+
+ Now, each OS (MacOsGuiFactory, WindowOsGuiFactory, LinuxOsGuiFactory) ensures that both UI elements 
+ always match.
+ ✅ This ensures consistency → No accidental mix-matching of MacButton with WindowsCheckBox.
+ ✅ The client just picks the right factory → It doesn't need to worry about which objects are 
+    returned.
+
+ Your use case perfectly fits the Abstract Factory Pattern because you are dealing with multiple 
+ related objects (Button + CheckBox) that should always be consistent.

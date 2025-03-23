@@ -1,0 +1,8 @@
+✅ Use Simple Factory → When object creation logic needs to be centralized but doesn't change 
+    frequently.
+✅ Use Factory Method → When you expect object creation logic to change, so subclasses can extend it.
+✅ Use Abstract Factory → When multiple related objects need to be created together.
+
+Analogy ->
+factory method -> primitive datatype
+abstract method -> class/struct datatype

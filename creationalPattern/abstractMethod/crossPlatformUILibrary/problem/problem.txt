@@ -1,0 +1,13 @@
+Question:
+ Design an Abstract Factory to create UI components (Button and Checkbox) for 
+ different operating systems (Windows and MacOS). Each OS should have its own 
+ implementation of Button and Checkbox.
+
+Concepts Covered:
+ ✔ Families of related objects (buttons & checkboxes for different OS).
+ ✔ Encapsulating object creation inside factories.
+ ✔ Decoupling client code from specific implementations.
+
+Extension:
+ Implement a Factory Method Pattern inside each concrete factory to further 
+ separate object creation.

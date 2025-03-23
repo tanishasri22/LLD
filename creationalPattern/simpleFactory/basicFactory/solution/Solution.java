@@ -6,30 +6,32 @@ interface Vehicle {
 
 class Car implements Vehicle {
     public void move() {
-        System.out.println("Car is moving");
+        System.out.println(this.getClass().getSimpleName() + "is moving");
     }
 }
 
 class Bike implements Vehicle {
     public void move() {
-        System.out.println("Bike is moving");
+        System.out.println(this.getClass().getSimpleName() + "is moving");
     }
 }
 
 class Truck implements Vehicle {
     public void move() {
-        System.out.println("Truck is moving");
+        System.out.println(this.getClass().getSimpleName() + "is moving");
     }
 }
 
 class simpleFactory {
     public static Vehicle simpleFactoryCreate(String vehicle) {
-        if (vehicle.compareTo("Car") == 0)
+        if (vehicle.equals("Car"))
             return new Car();
-        else if (vehicle.compareTo("Bike") == 0)
+        else if (vehicle.equals("Bike"))
             return new Bike();
-        else
+        else if (vehicle.equals("Truck"))
             return new Truck();
+        else
+            throw new IllegalArgumentException();
     }
 }
 

@@ -1,0 +1,57 @@
+@startuml
+
+interface CreditCardProcessor {
+    +printCreditCardPayment(): void
+}
+
+class PaypalCreditCardProcessor implements CreditCardProcessor {
+    +printCreditCardPayment(): void
+}
+
+class StripeCreditCardProcessor implements CreditCardProcessor {
+    +printCreditCardPayment(): void
+}
+
+interface UPIProcessor {
+    +printUPIPayment(): void
+}
+
+class PaypalUPIProcessor implements UPIProcessor {
+    +printUPIPayment(): void
+}
+
+class StripeUPIProcessor implements UPIProcessor {
+    +printUPIPayment(): void
+}
+
+interface PaymentFactory {
+    +getCreditCardProcessor(): CreditCardProcessor
+    +getUPIProcessor(): UPIProcessor
+}
+
+class PaypalFactory implements PaymentFactory {
+    +getCreditCardProcessor(): CreditCardProcessor
+    +getUPIProcessor(): UPIProcessor
+}
+
+class StripeFactory implements PaymentFactory {
+    +getCreditCardProcessor(): CreditCardProcessor
+    +getUPIProcessor(): UPIProcessor
+}
+
+class Solution {
+    +main(args: String[]): void
+}
+
+
+
+PaypalFactory --> PaypalCreditCardProcessor : creates
+PaypalFactory --> PaypalUPIProcessor : creates
+
+StripeFactory --> StripeCreditCardProcessor : creates
+StripeFactory --> StripeUPIProcessor : creates
+
+Solution ..> PaymentFactory : uses
+
+
+@enduml

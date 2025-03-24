@@ -1,0 +1,19 @@
+Question:
+ Implement an Abstract Factory for a Notification System that supports:
+ 1. Email and SMS notifications
+ 2. Works on AWS and Firebase as backends
+
+The factory should allow switching between backends without changing client code.
+
+Concepts Covered:
+ ✔ Handling different implementations for platforms.
+ ✔ Abstract Factory with external dependencies (push notifications, emails).
+ ✔ How Abstract Factory ensures code flexibility.
+
+Extension:
+Convert this into a Singleton Factory to ensure only one instance of each notification service exists.
+
+📌 Example Usage:
+ NotificationFactory factory = new AwsNotificationFactory();
+ EmailSender emailSender = factory.createEmailSender();
+ emailSender.send("Hello from AWS SES!");

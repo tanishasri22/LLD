@@ -1,0 +1,34 @@
+@startuml
+
+class CardManufacturingSingletonLazy {
+    - static volatile CardManufacturingSingletonLazy config
+    - String apiKey
+    - String dataBaseUrl
+    - CardManufacturingSingletonLazy()
+    + static CardManufacturingSingletonLazy getInstance()
+    + void setApiKey(String apiKey)
+    + String getApiKey()
+    + void setDataBaseUrl(String dataBaseUrl)
+    + String getDataBaseUrl()
+}
+
+class CardManufacturingSingletonEager {
+    - static final CardManufacturingSingletonEager INSTANCE
+    - String apiKey
+    - String dataBaseUrl
+    - CardManufacturingSingletonEager()
+    + static CardManufacturingSingletonEager getInstance()
+    + void setApiKey(String apiKey)
+    + String getApiKey()
+    + void setDataBaseUrl(String dataBaseUrl)
+    + String getDataBaseUrl()
+}
+
+class solution {
+    + static void main(String[] args)
+}
+
+solution --> CardManufacturingSingletonLazy : "Uses"
+solution --> CardManufacturingSingletonEager : "Uses"
+
+@enduml

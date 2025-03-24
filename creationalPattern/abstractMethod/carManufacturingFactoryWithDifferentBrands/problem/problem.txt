@@ -1,0 +1,16 @@
+Question:
+ Design an Abstract Factory for a Car Manufacturing Plant that produces Sedans and SUVs for 
+ multiple brands (Tesla and Toyota). Each brand should have its own Sedan and SUV models.
+
+Concepts Covered:
+ ✔ Creating object families dynamically.
+ ✔ Abstracting away specific brand implementations.
+ ✔ Managing dependencies between objects.
+
+Extension:
+ Convert this into a Builder Pattern where each car is built step by step.
+
+📌 Example Usage:
+ CarFactory teslaFactory = new TeslaFactory();
+ Sedan teslaSedan = teslaFactory.createSedan();  // Returns Tesla Model 3
+ SUV teslaSUV = teslaFactory.createSUV();        // Returns Tesla Model X

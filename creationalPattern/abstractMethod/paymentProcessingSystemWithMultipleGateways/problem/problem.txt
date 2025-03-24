@@ -1,0 +1,13 @@
+Question:
+ Create an Abstract Factory to support different payment gateways (PayPal, Stripe). Each payment
+ gateway should have its own CreditCardProcessor and UPIProcessor implementation.
+Concepts Covered:
+ ✔ How Abstract Factory extends Factory Method.
+ ✔ Encapsulating multiple related object creations (different payment gateways).
+ ✔ Using Abstract Factory in real-world applications.
+Extension:
+ Use the Strategy Pattern to dynamically select the payment processor at runtime.
+📌 Example Usage:
+ PaymentGatewayFactory factory = new PayPalFactory();
+ CreditCardProcessor ccProcessor = factory.createCreditCardProcessor();
+ ccProcessor.process(100.0);

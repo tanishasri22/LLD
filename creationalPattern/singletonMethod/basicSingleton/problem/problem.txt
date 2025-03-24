@@ -1,0 +1,13 @@
+Question:
+ Implement a Singleton class for a Configuration Manager, ensuring that only one instance of 
+ the configuration is created. The class should:
+    1. Load configuration settings (e.g., API keys, database URLs) from a file.
+    2. Provide a method to retrieve configuration values.
+
+Concepts Covered:
+ ✔ Implementing a Singleton in Java.
+ ✔ Lazy vs. Eager Initialization.
+ ✔ Thread Safety in Singleton.
+
+Extension:
+ Modify it to use Bill Pugh Singleton Design for better efficiency.

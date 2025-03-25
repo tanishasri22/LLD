@@ -1,0 +1,32 @@
+@startuml
+
+class LoggerLazy {
+    - static LoggerLazy Instance
+    - String filePath
+    - LoggerLazy()
+    + String getFilePath()
+    + void setFilePath(String filePath)
+    + static LoggerLazy getInstance()
+    + void writeToFile(String filePath)
+}
+
+class LoggerEager {
+    - static LoggerEager Instance
+    - String filePath
+    - LoggerEager()
+    + String getFilePath()
+    + void setFilePath(String filePath)
+    + static LoggerEager getInstance()
+    + void writeToFile(String filePath)
+}
+
+class solution {
+    + static void main(String[] args)
+}
+
+solution ..> LoggerLazy : "Uses Lazy Singleton"
+solution ..> LoggerEager : "Uses Eager Singleton"
+LoggerLazy --> LoggerLazy : "Singleton Instance"
+LoggerEager --> LoggerEager : "Singleton Instance"
+
+@enduml

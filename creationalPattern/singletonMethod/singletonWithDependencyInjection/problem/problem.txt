@@ -1,0 +1,17 @@
+Question:
+ Design a Database Connection Pool as a Singleton. The pool should:
+    1. Maintain a limited number of database connections.
+    2. Allow clients to request and release connections.
+    3. Be initialized only once across the application.
+
+Concepts Covered:
+ ✔ Singleton with resource management.
+ ✔ Handling lazy loading and object pooling.
+ ✔ Integration with Dependency Injection frameworks (like Spring).
+
+Extension:
+ Convert this into a Factory Pattern that creates connection objects dynamically.
+
+📌 Example Usage:
+ DatabaseConnectionPool pool = DatabaseConnectionPool.getInstance();
+ Connection conn = pool.getConnection();

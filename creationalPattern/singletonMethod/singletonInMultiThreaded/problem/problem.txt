@@ -1,0 +1,16 @@
+Question:
+ Create a Singleton Logger class that writes logs to a file. Ensure:
+    1. The Singleton instance is thread-safe.
+    2. The logger can be accessed by multiple threads simultaneously.
+
+Concepts Covered:
+ ✔ Handling concurrency in Singleton.
+ ✔ Using synchronized vs. volatile for thread safety.
+ ✔ Performance optimizations using Double-Checked Locking.
+ 
+Extension:
+ Implement a Factory Pattern to allow different types of loggers (FileLogger, ConsoleLogger).
+
+📌 Example Usage:
+ Logger logger = Logger.getInstance();
+ logger.log("Application started");

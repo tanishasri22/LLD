@@ -1,0 +1,28 @@
+ @startuml
+class DatabaseConnection {
+    - String name
+    + DatabaseConnection(String name)
+    + void use()
+    + void reset()
+}
+
+class DatabaseConnectionPool {
+    - static DatabaseConnectionPool instance
+    - static Queue<DatabaseConnection> pool
+    - int connectionsMadeSoFar
+    - static final int maxSize
+    - DatabaseConnectionPool()
+    + static synchronized DatabaseConnectionPool getInstance()
+    + DatabaseConnection getConnection(String name)
+    + void releaseConnection(DatabaseConnection connection)
+    + int getActiveConnections()
+}
+
+class solution {
+    + main(String[] args)
+}
+
+solution --> DatabaseConnectionPool
+DatabaseConnectionPool --> DatabaseConnection
+
+@enduml

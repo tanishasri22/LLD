@@ -1,0 +1,12 @@
+Question:
+ Create a Singleton Settings Manager using an enum. The manager should:
+    1. Store global application settings.
+    2. Allow modifying and retrieving settings dynamically.
+
+Concepts Covered:
+ ✔ Using Enum Singleton for better thread safety.
+ ✔ Avoiding Serialization Issues in Singleton.
+ ✔ Best Practices for Java Singleton Implementation.
+
+Extension:
+ Extend this to support Observer Pattern, where changes to settings trigger updates across the app.

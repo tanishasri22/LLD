@@ -1,0 +1,15 @@
+When to Use the Builder Pattern?
+    When a class has multiple optional parameters.
+    When an object requires complex initialization.
+    When you want to make object creation readable and maintainable.
+    When you want immutable objects (as in the case of Java’s StringBuilder).
+
+Yes, exactly! In the Builder Pattern, the following principles should ideally be followed:
+    1️⃣ CarBuilder Should Not Have Getters
+     1. The builder’s purpose is to build the object; it’s not meant for retrieving values.
+     2. Once the object is built, you should access values through the constructed object (Car).
+
+    2️⃣ Car Should Not Have Setters
+     1. The builder pattern encourages immutability, meaning once an object is created, it should 
+        not be modified.
+     2. If you allow setters, it breaks immutability and might introduce inconsistencies.

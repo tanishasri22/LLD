@@ -1,0 +1,14 @@
+Question:
+    Design a Builder Pattern for creating a House object with the following attributes:
+        rooms (integer, optional)
+        windows (integer, optional)
+        hasGarage (boolean, optional)
+        hasSwimmingPool (boolean, optional)
+
+    The builder should:
+    ✔ Allow step-by-step construction of a House object.
+    ✔ Prevent inconsistent object creation (e.g., a house with a garage but no rooms).
+    ✔ Ensure the final object is immutable after construction.
+
+Extension:
+Modify the builder to support method chaining (Fluent Interface).

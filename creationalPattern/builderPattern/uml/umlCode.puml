@@ -1,0 +1,38 @@
+@startuml
+
+class House {
+    - int room
+    - int windows
+    - boolean hasGarage
+    - boolean hasSwimmingPool
+
+    + House(HouseBuilder houseBuilder)
+    + getRoom(): int
+    + getWindows(): int
+    + getHasGarage(): boolean
+    + getHasSwimmingPool(): boolean
+}
+
+class HouseBuilder {
+    - int room
+    - int windows
+    - boolean hasGarage
+    - boolean hasSwimmingPool
+
+    + HouseBuilder()
+    + setRoom(int roomNum): HouseBuilder
+    + setWindows(int windows): HouseBuilder
+    + setHasGarage(boolean hasGarage): HouseBuilder
+    + setHasSwimmingPool(boolean hasSwimmingPool): HouseBuilder
+    + build(): House
+}
+
+class solution {
+    + main(String[] args)
+}
+
+"HouseBuilder" --> "House" : «creates»  // Dependency (HouseBuilder creates House)
+"House" o-- "HouseBuilder" : «has a»  // Composition (House contains HouseBuilder)
+"solution" ..> "House" : «uses»  // Dependency (solution uses House)
+
+@enduml

@@ -1,4 +1,4 @@
-package creationalPattern.builderPattern.solution;
+package creationalPattern.builderPattern.simpleBuilder.solution;
 
 class House{
     private int room;

@@ -1,0 +1,40 @@
+@startuml
+class House {
+    - int room
+    - int windows
+    - boolean hasGarage
+    - boolean hasSwimmingPool
+    + int getRoom()
+    + int getWindows()
+    + boolean getHasGarage()
+    + boolean getHasSwimmingPool()
+}
+
+class HouseBuilder {
+    - int room
+    - int windows
+    - boolean hasGarage
+    - boolean hasSwimmingPool
+    + HouseBuilder()
+    + HouseBuilder setRoom(int roomNum)
+    + HouseBuilder setWindows(int windows)
+    + HouseBuilder setHasGarage(boolean hasGarage)
+    + HouseBuilder setHasSwimmingPool(boolean hasSwimmingPool)
+    + House build()
+}
+
+class HouseDirector {
+    + void constructLuxuryHouse(HouseBuilder builder)
+    + void constructBudgetHouse(HouseBuilder builder)
+}
+
+class Solution {
+    + static void main(String[] args)
+}
+
+House "1" <-down- "1..*" HouseBuilder : "built from"
+HouseDirector --> HouseBuilder : "uses to construct"
+
+Solution --> HouseDirector : "creates"
+Solution --> HouseBuilder : "creates"
+@enduml

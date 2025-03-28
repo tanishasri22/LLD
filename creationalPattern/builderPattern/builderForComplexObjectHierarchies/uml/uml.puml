@@ -1,0 +1,34 @@
+@startuml
+
+class Computer {
+    - String processor
+    - int ram
+    - String graphicsCard
+    - String storageType
+    - List<String> additionalPeripherals
+    - Computer(ComputerBuilder builder)
+    + toString(): String
+}
+
+class ComputerBuilder {
+    - String processor
+    - int ram
+    - String graphicsCard
+    - String storageType
+    - List<String> additionalPeripherals
+    + ComputerBuilder(String processor, int ram)
+    + setGraphicsCard(String graphicsCard): ComputerBuilder
+    + setStorageType(String storageType): ComputerBuilder
+    + addPeripheral(String peripheral): ComputerBuilder
+    + build(): Computer
+}
+
+class Solution {
+    + main(String[] args)
+}
+
+Computer "1" <-- "1" ComputerBuilder : "<<creates>>"
+
+Solution ..> Computer : "Uses"
+
+@enduml

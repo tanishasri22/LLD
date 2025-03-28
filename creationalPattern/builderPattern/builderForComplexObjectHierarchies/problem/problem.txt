@@ -1,0 +1,18 @@
+Question:
+ Design a Builder Pattern for a Computer object with the following configurations:
+ 
+ 1. processor (Required)
+ 2. ram (Required)
+ 3. graphicsCard (Optional)
+ 4. storageType (HDD or SSD, Optional)
+ 5. additionalPeripherals (List of peripherals, Optional)
+
+The builder should:
+  ✔ Enforce required fields while allowing optional ones.
+  ✔ Support dynamic customization of optional features.
+
+Extension:
+ Convert this into a Prototype Pattern by allowing deep cloning of an existing 
+ Computer object.
+
+

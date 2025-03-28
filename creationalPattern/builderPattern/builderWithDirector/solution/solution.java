@@ -1,16 +1,16 @@
 package creationalPattern.builderPattern.builderWithDirector.solution;
-
+import creationalPattern.builderPattern.simpleBuilder.solution.House;
 
 class HouseDirector {
     public void constructLuxuryHouse(House.HouseBuilder builder) {
-        builder.setRooms(5)
+        builder.setRoom(5)
                 .setWindows(10)
                 .setHasGarage(true)
                 .setHasSwimmingPool(true);
     }
 
     public void constructBudgetHouse(House.HouseBuilder builder) {
-        builder.setRooms(2)
+        builder.setRoom(2)
                 .setWindows(4)
                 .setHasGarage(false)
                 .setHasSwimmingPool(false);
@@ -18,7 +18,7 @@ class HouseDirector {
 }
 
 
-public class solution {
+public class Solution {
     public static void main(String[] args) {
         HouseDirector director = new HouseDirector();
 
@@ -36,7 +36,7 @@ public class solution {
 
         // Manually Created Custom House
         House customHouse = new House.HouseBuilder()
-                .setRooms(3)
+                .setRoom(3)
                 .setWindows(6)
                 .setHasGarage(false)
                 .setHasSwimmingPool(true)

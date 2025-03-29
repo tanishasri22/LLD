@@ -74,7 +74,7 @@ class Computer {
 
 public class solution {
     public static void main(String[] args) {
-        Computer computer = new Computer.ComputerBuilder("M3PRO", 8).build();
+        // Computer computer = new Computer.ComputerBuilder("M3PRO", 8).build();
 
         //DYNAMIC CUSTOMIZATION - Gaming computer with optional fields
         Computer gamingComputer = new Computer.ComputerBuilder("AMD Ryzen 9", 32)

@@ -1,0 +1,4 @@
+Question
+ Create a prototype pattern for an Employee using shallow and deep copy.
+ 
+✔ Covers: Basic prototype implementation, deep vs. shallow copy, polymorphism.

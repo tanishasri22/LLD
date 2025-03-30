@@ -1,0 +1,10 @@
+Question: 
+ Implement the Adapter Pattern in a scenario where a MediaPlayer interface supports 
+ playing MP3 files, but you need to integrate a AdvancedMediaPlayer class that plays MP4 
+ and VLC formats. Create an adapter to bridge the gap between MediaPlayer and 
+ AdvancedMediaPlayer.
+ 
+Concepts Covered:
+ ✅ Basic structure of Adapter Pattern
+ ✅ Object Adapter vs. Class Adapter
+ ✅ Understanding interface bridging

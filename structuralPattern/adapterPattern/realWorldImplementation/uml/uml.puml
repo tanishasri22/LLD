@@ -1,0 +1,33 @@
+@startuml
+
+interface PaymentGateway {
+    +payWithCard(String card)
+}
+
+interface NewPaymentGateway {
+    +makeTransaction(String money)
+}
+
+class MakeTransaction implements NewPaymentGateway {
+    +makeTransaction(String card)
+}
+
+class PaymentGatewayAdapter implements PaymentGateway {
+    +payWithCard(String card)
+    -newPaymentGateway: NewPaymentGateway
+    +PaymentGatewayAdapter()
+}
+
+PaymentGatewayAdapter *-- NewPaymentGateway : composition
+
+class OldPaymentGateway implements PaymentGateway {
+    +payWithCard(String card)
+}
+
+class solution {
+    +main(String[] args)
+}
+
+solution ..> PaymentGateway : uses
+
+@enduml

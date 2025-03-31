@@ -2,6 +2,9 @@ package structuralPattern.adapterPattern.basicImplementation.solution;
 
 import java.util.InputMismatchException;
 
+
+// TO RECHECK
+
 // Segregated interfaces for specific media types
 interface MediaPlayer {
     void play(String type, String file);
@@ -10,7 +13,7 @@ interface MediaPlayer {
 interface MP4Player {
     void playMP4(String file);
 }
-
+ 
 interface VLCPlayer {
     void playVLC(String file);
 }

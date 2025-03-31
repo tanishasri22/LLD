@@ -1,0 +1,7 @@
+Question:
+ You are working on an E-commerce Payment System. The existing system uses OldPaymentGateway with methods payWithCard(), but a new third-party NewPaymentGateway provides makeTransaction(). Implement an adapter so that the new system works with existing clients.
+ 
+Concepts Covered:
+ ✅ Adapting legacy code to work with new APIs
+ ✅ Encapsulation and code reusability
+ ✅ Loose coupling

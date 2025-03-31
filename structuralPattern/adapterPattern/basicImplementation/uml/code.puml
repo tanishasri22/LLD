@@ -1,36 +1,43 @@
 @startuml
+
 interface MediaPlayer {
-    +play(String audioType, String fileName)
+    void play(String type, String file)
 }
 
-interface AdvancedMediaPlayer {
-    +playMp4(String fileName)
-    +playVlc(String fileName)
+interface MP4Player {
+    void playMP4(String file)
 }
 
-class Mp4Player implements AdvancedMediaPlayer {
-    +playMp4(String fileName)
-    +playVlc(String fileName) // Does nothing
+interface VLCPlayer {
+    void playVLC(String file)
 }
 
-class VlcPlayer implements AdvancedMediaPlayer {
-    +playMp4(String fileName) // Does nothing
-    +playVlc(String fileName)
+class MP4 implements MP4Player {
+    void playMP4(String file)
 }
 
-class MediaAdapter implements MediaPlayer {
-    - AdvancedMediaPlayer advancedMediaPlayer
-    + MediaAdapter(String audioType)
-    + play(String audioType, String fileName)
+class VLC implements VLCPlayer {
+    void playVLC(String file)
+}
+
+class MediaPlayerAdapter implements MediaPlayer {
+    - MP4Player mp4Player
+    - VLCPlayer vlcPlayer
+    MediaPlayerAdapter(String type)
+    void play(String type, String file)
 }
 
 class AudioPlayer implements MediaPlayer {
-    - MediaAdapter mediaAdapter
-    + play(String audioType, String fileName)
+    void play(String type, String file)
+}
+
+class SolutionISP {
+    main(String[] args)
 }
 
 
-MediaAdapter o-- AdvancedMediaPlayer
-AudioPlayer o-- MediaAdapter
+MediaPlayerAdapter o-- MP4Player
+MediaPlayerAdapter o-- VLCPlayer
+AudioPlayer o-- MediaPlayerAdapter
 
 @enduml

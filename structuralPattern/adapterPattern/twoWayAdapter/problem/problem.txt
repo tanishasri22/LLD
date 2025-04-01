@@ -1,0 +1,7 @@
+Question: 
+ Implement a Two-Way Adapter that allows both USB and Type-C interfaces to communicate    seamlessly. Ensure the adapter allows a USB device to work on a Type-C port and vice versa.
+
+Concepts Covered:
+ ✅ Implementing Bidirectional Adapter
+ ✅ Achieving Two-Way Compatibility
+ ✅ Handling conversions in both directions

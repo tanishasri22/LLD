@@ -1,0 +1,38 @@
+@startuml
+
+interface USB {
+    + chargeViaUSB()
+}
+
+interface TypeC {
+    + chargeViaTypeC()
+}
+
+class UsbCompany implements USB {
+    + chargeViaUSB()
+}
+
+class TypeCCompany implements TypeC {
+    + chargeViaTypeC()
+}
+
+class TwoWayAdapter implements USB, TypeC {
+    - USB usb
+    - TypeC typeC
+    + chargeViaUSB()
+    + chargeViaTypeC()
+}
+
+class solution {
+    + main(String[] args)
+}
+
+
+TwoWayAdapter --> USB : "composition"
+TwoWayAdapter --> TypeC : "composition"
+
+solution --> UsbCompany : "implements"
+solution --> TwoWayAdapter : "implements"
+solution --> TypeCCompany : "implements"
+
+@enduml

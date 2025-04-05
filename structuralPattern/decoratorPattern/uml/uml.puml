@@ -1,0 +1,32 @@
+class BaseWaffleClass {
+    - int price
+    - String description
+    + getDescription(): String
+    + getPrice(): int
+}
+
+class IndianBase extends BaseWaffleClass {
+    + IndianBase()
+}
+
+abstract class ChocolateDecorator extends BaseWaffleClass {
+    + getDescription(): String
+    + getPrice(): int
+}
+
+class CaramelChocolate extends ChocolateDecorator {
+    + CaramelChocolate(BaseWaffleClass base)
+}
+
+abstract class FruitDecorator extends BaseWaffleClass {
+    + getDescription(): String
+    + getPrice(): int
+}
+
+class AppleDecorator extends FruitDecorator {
+    + AppleDecorator(BaseWaffleClass base)
+}
+
+' Aggregation (has-a) Relationships
+ChocolateDecorator o-- BaseWaffleClass
+FruitDecorator     o-- BaseWaffleClass

@@ -1,0 +1,7 @@
+Question: 
+ You are building a Text Editor where the base Text class has a render() method. Implement decorators for adding bold, italic, and underline effects dynamically without modifying the base class.
+
+Concepts Covered:
+ ✅ Practical application of decorators
+ ✅ Chaining multiple decorators
+ ✅ Code extensibility and flexibility

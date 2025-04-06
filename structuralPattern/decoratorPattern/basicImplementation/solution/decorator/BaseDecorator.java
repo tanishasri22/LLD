@@ -3,7 +3,7 @@ package structuralPattern.decoratorPattern.basicImplementation.solution.decorato
 import structuralPattern.decoratorPattern.basicImplementation.solution.coffee.Coffee;
 
 public abstract class BaseDecorator extends Coffee{
-    Coffee coffee;
+    protected Coffee coffee;
 
     @Override
     public int getCost() {

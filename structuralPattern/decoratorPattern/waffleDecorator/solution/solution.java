@@ -1,11 +1,11 @@
-package structuralPattern.decoratorPattern.solution;
+package structuralPattern.decoratorPattern.waffleDecorator.solution;
 
-import structuralPattern.decoratorPattern.solution.BaseWaffle.BaseWaffleClass;
-import structuralPattern.decoratorPattern.solution.BaseWaffle.IndianBase;
-import structuralPattern.decoratorPattern.solution.Decorator.ChocolateDecorator.CaramelChocolate;
-import structuralPattern.decoratorPattern.solution.Decorator.ChocolateDecorator.DarkChocolate;
-import structuralPattern.decoratorPattern.solution.Decorator.FruitDecorator.AppleDecorator;
-import structuralPattern.decoratorPattern.solution.Decorator.FruitDecorator.BananaDecorator;
+import structuralPattern.decoratorPattern.waffleDecorator.solution.BaseWaffle.BaseWaffleClass;
+import structuralPattern.decoratorPattern.waffleDecorator.solution.BaseWaffle.IndianBase;
+import structuralPattern.decoratorPattern.waffleDecorator.solution.Decorator.ChocolateDecorator.CaramelChocolate;
+import structuralPattern.decoratorPattern.waffleDecorator.solution.Decorator.ChocolateDecorator.DarkChocolate;
+import structuralPattern.decoratorPattern.waffleDecorator.solution.Decorator.FruitDecorator.AppleDecorator;
+import structuralPattern.decoratorPattern.waffleDecorator.solution.Decorator.FruitDecorator.BananaDecorator;
 
 public class solution {
     public static void main(String[] args) {

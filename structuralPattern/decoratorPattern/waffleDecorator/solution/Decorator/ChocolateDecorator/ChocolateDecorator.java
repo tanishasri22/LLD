@@ -1,6 +1,6 @@
-package structuralPattern.decoratorPattern.solution.Decorator.ChocolateDecorator;
+package structuralPattern.decoratorPattern.waffleDecorator.solution.Decorator.ChocolateDecorator;
 
-import structuralPattern.decoratorPattern.solution.BaseWaffle.BaseWaffleClass;
+import structuralPattern.decoratorPattern.waffleDecorator.solution.BaseWaffle.BaseWaffleClass;
 
 public abstract class ChocolateDecorator extends BaseWaffleClass{
     BaseWaffleClass baseWaffle;

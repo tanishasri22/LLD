@@ -1,4 +1,4 @@
-package structuralPattern.decoratorPattern.solution.BaseWaffle;
+package structuralPattern.decoratorPattern.waffleDecorator.solution.BaseWaffle;
 
 public abstract class BaseWaffleClass {
     protected int price;

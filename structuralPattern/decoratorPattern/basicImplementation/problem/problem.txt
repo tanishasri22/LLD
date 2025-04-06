@@ -1,0 +1,7 @@
+Question: 
+ Implement the Decorator Pattern for a Coffee Ordering System. The base Coffee class should have a cost() method. Create decorators for Milk, Sugar, and Caramel that modify the cost dynamically.
+ 
+Concepts Covered:
+ ✅ Basic structure of the Decorator Pattern
+ ✅ Dynamic behavior modification
+ ✅ Wrapping components using composition

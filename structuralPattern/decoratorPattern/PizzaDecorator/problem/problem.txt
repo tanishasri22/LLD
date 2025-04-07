@@ -1,0 +1,7 @@
+Question: 
+ Design a Pizza Customization System where a PlainPizza class has a getDescription() and cost() method. Implement decorators for Cheese, Olives, and Pepperoni. Ensure the order of applying decorators affects the final output.
+
+Concepts Covered:
+ ✅ Nested decorators and their execution order
+ ✅ How wrapping order affects functionality
+ ✅ Dynamically adding/removing features at runtime

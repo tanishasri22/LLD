@@ -1,0 +1,25 @@
+@startuml
+
+interface Image {
+    +display()
+}
+
+class HighResolutionImage implements Image {
+    -filePath: String
+    +HighResolutionImage(filepath: String)
+    +loadImage()
+    +display()
+}
+
+class ProxyImage implements Image {
+    -highResolutionImage: HighResolutionImage
+    -filePath: String
+    +ProxyImage(filePath: String)
+    +getFilePath(): String
+    +display()
+}
+
+
+ProxyImage *-- HighResolutionImage : "composition"
+
+@enduml

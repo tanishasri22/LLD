@@ -1,0 +1,4 @@
+Virtual Proxy: Lazy Initialization
+Problem: You’re creating a HighResolutionImage class that loads a high-res image from disk   (simulated by a delay).
+ Design a proxy that loads the image only when it is actually needed (e.g., when display() is called).
+Practice Concepts: Lazy loading, virtual proxy.

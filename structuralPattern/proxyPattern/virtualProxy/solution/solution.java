@@ -8,8 +8,9 @@ class HighResolutionImage implements Image{
     private String filePath;
     HighResolutionImage(String filepath){
         this.filePath = filepath;
-
+        loadImage();
     }
+
     public void loadImage(){
         System.out.println("Loading image from disk from file : " + filePath);
     }

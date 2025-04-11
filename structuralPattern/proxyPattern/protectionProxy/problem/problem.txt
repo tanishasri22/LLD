@@ -1,0 +1,5 @@
+Protection Proxy: Access Control
+Problem: Create a Document interface with method read() and write().
+ Users can be either Admin or Viewer.
+ Use a protection proxy to restrict Viewer users to only read(), and Admin users can access both.
+Practice Concepts: Access control, role-based proxy behavior.

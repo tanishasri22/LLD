@@ -1,0 +1,34 @@
+@startuml
+
+interface Document {
+    +read(): void
+    +write(content: String): void
+}
+
+class OriginalDocument {  
+    -filePath: String
+    +OriginalDocument(filePath: String)
+    +read(): void
+    +write(content: String): void
+}
+
+class ProxyDocument {
+    -originalDocument: OriginalDocument
+    -filePath: String
+    -user: User
+    +ProxyDocument(user: User, filePath: String)
+    -initializeIfNeeded(): void
+    +read(): void
+    +write(content: String): void
+}
+
+
+
+Document <|.. OriginalDocument
+Document <|.. ProxyDocument
+
+' Composition
+ProxyDocument *-- OriginalDocument
+
+
+@enduml

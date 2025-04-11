@@ -1,0 +1,4 @@
+Smart Reference Proxy: Counting Accesses
+Problem: You have a DatabaseConnection class. Create a proxy that tracks how many times query() has been called.
+ Print a warning if queries exceed a threshold (say, 5).
+Practice Concepts: Smart references, logging, controlling usage.

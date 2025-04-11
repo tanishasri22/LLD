@@ -1,0 +1,30 @@
+@startuml
+
+interface Query {
+    +query(query: String): void
+}
+
+class DatabaseConnection {
+    -dbConnectionString: String
+    +DatabaseConnection(dbConnectString: String)
+    -connectDb(connectionString: String): void
+    +query(query: String): void
+}
+
+class DatabaseConnectionProxy {
+    -dbConnect: DatabaseConnection
+    -dbConnectionString: String
+    -threshold: int
+    -countQuery: int
+    -warningShown: boolean
+    +DatabaseConnectionProxy(dbConnectionString: String, threshold: int)
+    -initializeIfNeeded(): void
+    +query(query: String): void
+}
+
+
+Query <|.. DatabaseConnection
+Query <|.. DatabaseConnectionProxy
+DatabaseConnectionProxy *-- DatabaseConnection
+
+@enduml

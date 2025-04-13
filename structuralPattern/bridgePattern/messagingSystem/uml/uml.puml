@@ -1,0 +1,38 @@
+@startuml
+
+' Interfaces
+interface MessageSender {
+    +send(content: String)
+}
+
+' Concrete Implementations
+class EmailSender implements MessageSender {
+    +send(content: String)
+}
+
+class SmsSender implements MessageSender {
+    +send(content: String)
+}
+
+' Abstraction
+abstract class Message {
+    -messageSender: MessageSender
+    +Message(messageSender: MessageSender)
+    +sendMessage(content: String)
+}
+
+' Refined Abstractions
+class TextMessage extends Message {
+    +sendMessage(content: String)
+}
+
+class AlertMessage extends Message {
+    +sendMessage(content: String)
+}
+
+
+
+Message *-- MessageSender
+
+
+@enduml

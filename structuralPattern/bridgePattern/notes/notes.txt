@@ -1,0 +1,13 @@
+💡 Easy Rule:
+
+“Abstraction” = What the user wants to do (e.g., send a message)
+                -> with what user interacts with.
+
+“Implementation” = How it gets done (e.g., send via Email, SMS, Push)
+                -> what is needed to perform the abstraction
+
+✅ “Abstraction” → What the user interacts with (e.g., Message interface).
+It's the layer exposed to the client — defines high-level operations.
+
+✅ “Implementation” → What is needed to perform the abstraction behind the scenes (e.g., NotificationSender).
+It contains the platform-specific or technical logic to fulfill that behavior.

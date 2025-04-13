@@ -1,0 +1,3 @@
+Problem: Simulate a Remote Proxy where the client calls a method on a local proxy, which  internally mimics a network call (e.g., adds delay + prints "Calling remote service").
+ Implement a WeatherService that returns temperature and use a proxy to simulate a remote API call.
+Practice Concepts: Remote proxy, latency, abstraction.

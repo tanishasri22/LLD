@@ -1,0 +1,8 @@
+Problem:
+ “Suppose you are designing a cross-platform UI framework. You want to support multiple types of UI components (e.g., Button, Dropdown, Textbox), and you want them to render appropriately across different platforms (e.g., Windows, MacOS, Linux, Web).
+ Each platform might have a completely different rendering engine, but the behavior (e.g., onClick, onSelect, etc.) is shared. How would you design your system using the Bridge pattern?
+ Clearly identify the abstraction and implementation hierarchies.
+ How does your design handle the addition of a new component type without touching existing platform code?
+ How does it support a new platform without altering existing components?
+
+(Bonus: What if the rendering logic also depends on a “theme” system — e.g., Dark mode / Light mode — that can be dynamically changed at runtime? Would you still stick to Bridge, or combine with other patterns?)

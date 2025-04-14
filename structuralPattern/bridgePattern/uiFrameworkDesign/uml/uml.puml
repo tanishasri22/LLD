@@ -1,0 +1,49 @@
+@startuml
+
+interface Platforms {
+    +renderOnclick(action: String, onClickStatus: boolean)
+    +renderOnselect(action: String, onSelectStatus: boolean)
+}
+
+class Window implements Platforms {
+    +renderOnclick(action: String, onClickStatus: boolean)
+    +renderOnselect(action: String, onSelectStatus: boolean)
+}
+
+class Linux implements Platforms {
+    +renderOnclick(action: String, onClickStatus: boolean)
+    +renderOnselect(action: String, onSelectStatus: boolean)
+}
+
+class MacOS implements Platforms {
+    +renderOnclick(action: String, onClickStatus: boolean)
+    +renderOnselect(action: String, onSelectStatus: boolean)
+}
+
+abstract class UIComponent {
+    -onClickStatus: boolean
+    -onSelectStatus: boolean
+    -platform: Platforms
+    #UIComponent(platform: Platforms)
+    +onClick()
+    +onSelect()
+}
+
+class Button extends UIComponent {
+    +onClick()
+    +onSelect()
+}
+
+class Dropdown extends UIComponent {
+    +onClick()
+    +onSelect()
+}
+
+class Textbox extends UIComponent {
+    +onClick()
+    +onSelect()
+}
+
+UIComponent *-- Platforms
+
+@enduml

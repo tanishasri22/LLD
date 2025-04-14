@@ -1,0 +1,45 @@
+@startuml
+
+' Interfaces
+interface PaymentGateway {
+    +processPayment(amount: double, transactionId: String): void
+}
+
+' Implementations of PaymentGateway
+class Stripe implements PaymentGateway {
+    +processPayment(amount: double, transactionId: String): void
+}
+
+class PayPalGateway implements PaymentGateway {
+    +processPayment(amount: double, transactionId: String): void
+}
+
+class RazorPay implements PaymentGateway {
+    +processPayment(amount: double, transactionId: String): void
+}
+
+' Abstract PaymentMethod
+abstract class PaymentMethod {
+    -paymentGateway: PaymentGateway
+    +PaymentMethod(paymentGateway: PaymentGateway)
+    +usePaymentMethod(amount: double): void
+}
+
+' Concrete Payment Methods
+class CreditCard extends PaymentMethod {
+    +usePaymentMethod(amount: double): void
+}
+
+class DebitCard extends PaymentMethod {
+    +usePaymentMethod(amount: double): void
+}
+
+
+' Main class
+class PaymentSystem {
+    +main(args: String[]): void
+}
+
+PaymentMethod *-- PaymentGateway
+
+@enduml

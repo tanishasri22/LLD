@@ -1,0 +1,4 @@
+Problem: 
+ Design a payment processing system that supports multiple payment methods (e.g., CreditCard, PayPal) and multiple payment gateways (e.g., Stripe, PayPalGatewa) Use the Bridge pattern to decouple payment methods from payment gatewas.
+Objective: - Implement a PaymentMethod hierarcy.- Implement a PaymentGateway hierarcy.- Allow any payment  method to work with any payment gatewy.
+Key Concepts: - Decoupling abstraction (PaymentMethod) from implementation (PaymentGatewa).- Facilitating  independent development and extension of payment methods and gatewas.

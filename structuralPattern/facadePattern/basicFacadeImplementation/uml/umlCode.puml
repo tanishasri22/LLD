@@ -1,0 +1,34 @@
+@startuml
+class Amplifier {
+    +amplify(): void
+}
+
+class DVDPlayer {
+    +turnOn(): boolean
+    +turnOff(): boolean
+}
+
+class Projector {
+    +turnOn(): boolean
+    +turnOff(): boolean
+}
+
+class Lights {
+    +turnOn(): boolean
+    +turnOff(): boolean
+}
+
+class HomeTheaterFacade {
+    +watchMovie(movie: String): void
+    +endMovie(): void
+}
+
+
+' Composition relationships
+HomeTheaterFacade *-- Amplifier
+HomeTheaterFacade *-- DVDPlayer
+HomeTheaterFacade *-- Projector
+HomeTheaterFacade *-- Lights
+
+
+@enduml

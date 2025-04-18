@@ -1,0 +1,14 @@
+ Question 1: Basic Facade Implementation
+Scenario:
+ You're building a simple Home Theater system with multiple subsystems:
+ a. Amplifier
+ b. DVDPlayer
+ c. Projector
+ d. Lights
+
+Task:
+ Create a Facade class HomeTheaterFacade that provides high-level methods:
+ watchMovie(movie: string)
+ endMovie()
+
+Let the facade internally call all relevant subsystem methods in the correct sequence.

@@ -1,0 +1,62 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class User {
+    - String id
+    - String name
+    - int contact
+    - String address
+    - double amount
+    + User(String, String, String, int, double)
+    + getId(): String
+    + getContact(): int
+    + getName(): String
+    + getAmount(): double
+    + getAddress(): String
+    + depositAmount(double): void
+    + withdrawAmount(double): void
+}
+
+class AccountVerification {
+    + isUserFound(String): boolean
+    + verifyUser(String): boolean
+}
+
+class SecurityCodeCheck {
+    - int generatedOtp
+    + sendOtp(User): int
+    + verifyOtp(int): boolean
+}
+
+class FundsCheck {
+    + checkBalance(User): double
+}
+
+class AccountTransactionService {
+    + withdraw(User, double): boolean
+    + deposit(User, double): void
+}
+
+class BankAccountFacade {
+    - AccountVerification verifier
+    - SecurityCodeCheck otpChecker
+    - FundsCheck fundsChecker
+    - AccountTransactionService transactionService
+    + withdraw(User, double): void
+    + deposit(User, double): void
+}
+
+
+' Relationships
+BankAccountFacade *-- AccountVerification
+BankAccountFacade *-- SecurityCodeCheck
+BankAccountFacade *-- FundsCheck
+BankAccountFacade *-- AccountTransactionService
+
+
+SecurityCodeCheck ..> User
+FundsCheck ..> User
+AccountTransactionService ..> User
+BankAccountFacade ..> User
+
+@enduml

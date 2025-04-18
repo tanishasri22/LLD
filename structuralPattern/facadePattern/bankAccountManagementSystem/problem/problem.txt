@@ -1,0 +1,13 @@
+Question 2: Bank Account Management System
+Scenario:
+ A bank account system has multiple subsystems:
+ 1. AccountVerification
+ 2. SecurityCodeCheck
+ 3. FundsCheck
+
+Task:
+ Design a BankAccountFacade with:
+ 1. withdrawCash(amount: number)
+ 2. depositCash(amount: number)
+
+Each operation should verify the account, check security code, and perform the operation.

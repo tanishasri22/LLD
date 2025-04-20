@@ -38,7 +38,7 @@ class DatabaseConnectionPool{
         // 1. first we check if pool contains any connection already, if it does
         // we return one
         if (!pool.isEmpty()) {
-            synchronized (this) {
+            synchronized (DatabaseConnectionPool.class) {
                 if (!pool.isEmpty()) { // Double-check inside lock
                     return pool.poll();
                 }
@@ -46,10 +46,8 @@ class DatabaseConnectionPool{
         }
 
         // if pool is empty but total connections made so far is less than max possible
-        // connections (note: connectionsMadeSoFar number of connection are being
-        // currently used,
-        // hence not available in pool to use )
-        synchronized (this) {
+        // connections (note: connectionsMadeSoFar: number of connection made so far.
+        synchronized (DatabaseConnectionPool.class) {
             if (connectionsMadeSoFar < maxSize) {
                 connectionsMadeSoFar++;
                 return new DatabaseConnection(name);
@@ -62,7 +60,7 @@ class DatabaseConnectionPool{
     public void releaseConnection(DatabaseConnection connection) {
         connection.reset(); // No need for synchronization
 
-        synchronized (this) { // Synchronize only when modifying the pool
+        synchronized (DatabaseConnectionPool.class) { // Synchronize only when modifying the pool
             pool.add(connection);
         }
     }

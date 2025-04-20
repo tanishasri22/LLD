@@ -1,5 +1,5 @@
 package creationalPattern.prototypePattern.solution;
-
+//TOP LAYER COPY ONLY FOR NON-PRIMITIVES
 class Address {
     private String city;
 

@@ -1,7 +1,6 @@
 package structuralPattern.facadePattern.basicFacadeImplementation.solution;
 
 class Amplifier {
-    private int volume;
 
     void amplify() {
         System.out.println("Amplifying the music");

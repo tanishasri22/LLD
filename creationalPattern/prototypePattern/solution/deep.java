@@ -1,5 +1,5 @@
 package creationalPattern.prototypePattern.solution;
-
+//ALL LAYER COPY ONLY FOR NON-PRIMITIVES
 class Address {
     private String city;
 
@@ -20,6 +20,7 @@ class Address {
 class Employee implements Cloneable {
     private String name;
     private Address address;
+    
 
     Employee(String name, String city) {
         this.name = name;

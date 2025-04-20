@@ -1,0 +1,14 @@
+Question 3: Real-World Use Case - Travel Booking App
+
+Scenario:
+ You are building a travel booking service. It interacts with:
+ 1. FlightBookingSystem
+ 2. HotelBookingSystem
+ 3. TaxiBookingSystem
+
+Task:
+ Implement a TravelFacade class that has:
+ bookTrip(destination: string, dates: string[])
+ cancelTrip(tripId: string)
+ 
+It should coordinate all subsystems internally to make or cancel bookings.

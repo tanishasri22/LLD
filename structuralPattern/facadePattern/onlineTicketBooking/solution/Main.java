@@ -16,6 +16,10 @@ class User {
         this.email = email;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public void addBooking(Booking booking) {
         bookings.add(booking);
     }
@@ -200,7 +204,7 @@ class NotificationService {
 
 // ==== Facade ====
 class BookingManager {
-    private SearchService searchService = new SearchService();
+    // private SearchService searchService = new SearchService();
     private PaymentService paymentService = new PaymentService();
     private NotificationService notificationService = new NotificationService();
 
@@ -255,9 +259,8 @@ public class Main {
         User user = new User("U1", "Tanisha", "tanisha@example.com");
         BookingManager manager = new BookingManager();
 
-        FlightBooking fb = manager.bookFlight(user, "AI202", "Air India", "Delhi", "Mumbai");
         HotelBooking hb = manager.bookHotel(user, "Leela Palace", new Date(), new Date());
-        CabBooking cb = manager.bookCab(user, "Airport", "Hotel", "Ravi");
+        // CabBooking cb = manager.bookCab(user, "Airport", "Hotel", "Ravi");
 
         System.out.println("\n🗒 Cancelling Hotel Booking...");
         manager.cancelBooking(user, hb);

@@ -31,7 +31,7 @@ abstract class Message {
         this.messageSender = messageSender;
     }
 
-    public abstract void sendMessage(String content);
+    public abstract void writeMessage(String content);
 }
 
 // Refined Abstractions
@@ -41,7 +41,7 @@ class TextMessage extends Message {
     }
 
     @Override
-    public void sendMessage(String content) {
+    public void writeMessage(String content) {
         messageSender.send("[TEXT] " + content);
     }
 }
@@ -52,7 +52,7 @@ class AlertMessage extends Message {
     }
 
     @Override
-    public void sendMessage(String content) {
+    public void writeMessage(String content) {
         messageSender.send("[ALERT] " + content);
     }
 }
@@ -64,9 +64,9 @@ public class MessagingSystemDemo {
         MessageSender smsSender = new SmsSender();
 
         Message msg1 = new TextMessage(emailSender);
-        msg1.sendMessage("Hi, Tanisha here!");
+        msg1.writeMessage("Hi, Tanisha here!");
 
         Message msg2 = new AlertMessage(smsSender);
-        msg2.sendMessage("⚠️ Server CPU usage at 99%");
+        msg2.writeMessage("⚠️ Server CPU usage at 99%");
     }
 }

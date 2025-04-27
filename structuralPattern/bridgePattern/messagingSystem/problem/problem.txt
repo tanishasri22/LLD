@@ -2,6 +2,7 @@ Messaging System with Multiple Platforms
  Problem: Create a messaging system where messages can be sent via different platforms (e.g., Email, SMS. Use the Bridge pattern to separate the message content from the sending mechanis.
  
 Objective:
- Implement a Message hierarchy (e.g., TextMessage, AlertMessage. Implement a MessageSender hierarchy (e.g., EmailSender, SMSSender. Allow any message type to be sent via any platfor.
+ Implement a Message hierarchy (e.g., TextMessage, AlertMessage. Implement a MessageSender hierarchy (e.g., EmailSender, SMSSender. Allow any message type to be sent via any platform.
+
 Key Concepts:
- Separating high-level abstraction (Message) from low-level implementation (MessageSender. Enhancing flexibility and scalabilit.
+ Separating high-level abstraction (Message) from low-level implementation (MessageSender. Enhancing flexibility and scalability.

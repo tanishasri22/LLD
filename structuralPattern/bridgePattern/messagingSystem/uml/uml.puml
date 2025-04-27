@@ -18,16 +18,16 @@ class SmsSender implements MessageSender {
 abstract class Message {
     -messageSender: MessageSender
     +Message(messageSender: MessageSender)
-    +sendMessage(content: String)
+    +writeMessage(content: String)
 }
 
 ' Refined Abstractions
 class TextMessage extends Message {
-    +sendMessage(content: String)
+    +writeMessage(content: String)
 }
 
 class AlertMessage extends Message {
-    +sendMessage(content: String)
+    +writeMessage(content: String)
 }
 
 

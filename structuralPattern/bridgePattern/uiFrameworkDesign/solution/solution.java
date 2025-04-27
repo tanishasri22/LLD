@@ -1,5 +1,11 @@
 package structuralPattern.bridgePattern.uiFrameworkDesign.solution;
 
+/*
+ * "In my design, UIComponent defines the what (i.e., actions like onClick, onSelect), and 
+ * Platforms defines the how (i.e., rendering per OS). They are independently extendable, 
+ * fully following the Bridge Pattern's goal to decouple abstraction and implementation."
+ */
+
 interface Platforms {
     void renderOnclick(String action, boolean onClickStatus);
     void renderOnselect(String action, boolean onSelectStatus);

@@ -1,0 +1,9 @@
+Composition:
+Tight: Netflix cannot function without payment gateway.
+"Part-of" very strongly.
+If object is "born and dies" with the owner, it’s composition.
+
+Aggregation:
+Loose: University can function even without students.
+"Has-a" weakly.
+If object can exist freely and be shared, it’s aggregation.

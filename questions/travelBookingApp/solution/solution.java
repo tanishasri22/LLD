@@ -19,7 +19,8 @@ public class solution {
         LocalDateTime time = LocalDateTime.now().plusDays(9);
 
         System.out.println("\n----User1----\n");
-        Booking hotelBooking1 = new HotelBooking(UUID.randomUUID().toString(), "Delhi", "Azamgarh", user1, "5", LocalDateTime.now(), LocalDateTime.now().plusDays(5L));
+        Booking hotelBooking1 = new HotelBooking(UUID.randomUUID().toString(), "Delhi", "Azamgarh", user1, "5", 
+                LocalDateTime.now(), LocalDateTime.now().plusDays(5L));
         Booking hotelBooking2 = new HotelBooking(UUID.randomUUID().toString(), "Kolkata", "Mumbai", user1, "2",
                 time, LocalDateTime.now().plusDays(9));
         Booking hotelBooking3 = new HotelBooking(UUID.randomUUID().toString(), "Kolkata", "Mumbai", user1, "2",

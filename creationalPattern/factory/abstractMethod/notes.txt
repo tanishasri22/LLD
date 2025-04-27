@@ -1,0 +1,17 @@
+General Rule to Decide: "Product vs. Variant" Pattern
+
+Use this general identification method:
+Interfaces represent the product types (what you are creating).
+Factories represent the families of products (i.e., a group of related variants that work together).
+
+What you’re looking at      | Ask this question                                    | Result
+A category/type of object   | “What kinds of things do I create?”                  | → Interface (Product)
+A variation/set of products | “Which environment or config decides the variation?” | → Factory (Family of Products)
+
+UI Widget Factory:
+Types: Button, Checkbox (→ interfaces)
+Variants: MacOS, Windows (→ factories)
+
+🔁 Summary:
+Interfaces → types of product (what we're creating)
+Factories → groupings/variants of those products (the environment in which we're creating)

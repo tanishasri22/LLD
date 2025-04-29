@@ -1,0 +1,59 @@
+@startuml
+
+interface PaymentStrategy {
+    +pay(): void
+}
+
+class CreditCardProcessor {
+    +pay(): void
+}
+
+class PayPalProcessor {
+    +pay(): void
+}
+
+class CryptoCurrencyProcessor {
+    +pay(): void
+}
+
+class GeneralProcessor {
+    +pay(): void
+}
+
+class PaymentService {
+    -payment: PaymentStrategy
+    +PaymentService(payment: PaymentStrategy)
+    +pay(): void
+}
+
+class CreditCardService {
+    +CreditCardService(paymentStrategy: PaymentStrategy)
+    +pay(): void
+}
+
+class PayPalService {
+    +PayPalService(paymentStrategy: PaymentStrategy)
+    +pay(): void
+}
+
+class CryptoCurrencyService {
+    +CryptoCurrencyService(paymentStrategy: PaymentStrategy)
+    +pay(): void
+}
+
+class solution {
+    +main(args: String[]): void
+}
+
+PaymentStrategy <|.. CreditCardProcessor
+PaymentStrategy <|.. PayPalProcessor
+PaymentStrategy <|.. CryptoCurrencyProcessor
+PaymentStrategy <|.. GeneralProcessor
+
+PaymentService o-- PaymentStrategy
+
+CreditCardService --|> PaymentService
+PayPalService --|> PaymentService
+CryptoCurrencyService --|> PaymentService
+
+@enduml

@@ -1,0 +1,6 @@
+Basic Scenario –
+ Payment Processing: You are developing an e-commerce platform that must support multiple 
+ payment methods (credit card, PayPal, and cryptocurrency). The payment processing logic 
+ should allow adding new payment options in the future without modifying existing code.
+ How would you design the payment component using the Strategy pattern to accommodate 
+ this requirement and enable selecting a payment strategy at runtime?

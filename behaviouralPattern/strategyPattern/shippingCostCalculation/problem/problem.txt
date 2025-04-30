@@ -1,0 +1,7 @@
+Intermediate Scenario – 
+ Shipping Cost Calculation: 
+ In a logistics system, you need to calculate shipping costs based on different algorithms 
+ depending on the shipping method (standard, express, overnight, etc.). The company frequently 
+ adds new carriers with unique cost calculations, and the user should be able to choose the shipping 
+ strategy at checkout. How would you structure the shipping cost calculator using the 
+ Strategy pattern so that new shipping algorithms can be added without altering existing code?

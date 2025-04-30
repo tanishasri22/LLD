@@ -1,0 +1,60 @@
+@startuml
+
+' ========== Interfaces and Implementations ==========
+interface ShippingStrategy {
+    +calculateShippingCost(order: Order): double
+}
+
+class StandardShippingStrategy implements ShippingStrategy {
+    +calculateShippingCost(order: Order): double
+}
+
+class ExpressShippingStrategy implements ShippingStrategy {
+    +calculateShippingCost(order: Order): double
+}
+
+class OvernightShippingStrategy implements ShippingStrategy {
+    +calculateShippingCost(order: Order): double
+}
+
+' ========== Core Domain Classes ==========
+class Order {
+    -weight: double
+    -destination: String
+    +setWeight(weight: double): void
+    +setDestination(destination: String): void
+    +getWeight(): double
+    +getDestination(): String
+}
+
+class ShippingCostCalculator {
+    -strategy: ShippingStrategy
+    +ShippingCostCalculator(strategy: ShippingStrategy)
+    +setStrategy(strategy: ShippingStrategy): void
+    +calculate(order: Order): double
+}
+
+class CheckoutPageFactory {
+    +processOrder(order: Order, shippingMethod: String): void
+}
+
+' Dependency: Factory creates ShippingStrategy instances based on input
+CheckoutPageFactory ..> ShippingStrategy:uses
+
+
+
+' Aggregation: Calculator uses a Strategy (not owns permanently)
+ShippingCostCalculator o-- ShippingStrategy : strategy
+
+' Association: Calculator uses Order (but doesn't own it)
+ShippingCostCalculator --> Order
+
+' Association: Factory uses Order temporarily
+CheckoutPageFactory --> Order
+
+' Composition: Factory creates and owns calculator temporarily
+CheckoutPageFactory *-- ShippingCostCalculator
+
+
+
+@enduml

@@ -1,0 +1,7 @@
+Advanced Scenario – 
+ Dynamic Enemy Behavior: 
+ In a video game, enemy characters can adopt various attack behaviors (such as ranged, melee,
+ or stealth) and may switch their strategy based on the game state. For example, an enemy 
+ might start with a stealth strategy and switch to a ranged strategy when the player comes 
+ into view. How would you apply the Strategy pattern to implement this dynamically changeable
+ behavior for enemy AI?

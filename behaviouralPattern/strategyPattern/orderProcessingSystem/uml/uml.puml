@@ -1,0 +1,27 @@
+@startuml
+
+interface DiscountStrategy {
+    +double applyDiscount(double amount)
+}
+
+class SeasonalDiscount implements DiscountStrategy {
+    +double applyDiscount(double amount)
+}
+
+class PromotionalDiscount implements DiscountStrategy {
+    +double applyDiscount(double amount)
+}
+
+class ClearanceDiscount implements DiscountStrategy {
+    +double applyDiscount(double amount)
+}
+
+class OrderProcessing {
+    -DiscountStrategy discountStrategy
+    +void setDiscountStrategy(DiscountStrategy discountStrategy)
+    +double processOrder(double amount)
+}
+
+OrderProcessing "1" o-- "1" DiscountStrategy
+
+@enduml

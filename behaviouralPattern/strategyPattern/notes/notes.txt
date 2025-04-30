@@ -1,3 +1,4 @@
+ Note-1
  Strategy is a behavioral design pattern that turns a set of behaviors into objects and makes them 
  interchangeable inside original context object.
 
@@ -6,3 +7,59 @@
  its work, other objects may replace the currently linked strategy object with another one.
 
  uses 'has-a'(aggregation) as a relationship btw context class and strategy object.
+
+
+
+ Note-2
+
+ ques: why are u using setDiscountStrategy, tell me the significance of it. i think 
+    defining in constructor would do the work
+
+ Key Reasons for Using setDiscountStrategy:
+
+1. Flexibility in Changing Strategy at Runtime:
+
+ With the setter method, you can change the discount strategy dynamically at runtime, 
+ depending on the context or condition. For example, in a real-world scenario, you might 
+ want to switch between different discount strategies based on user actions, promotions, 
+ or other business rules.
+
+ orderProcessing.setDiscountStrategy(new SeasonalDiscount());
+
+ This allows you to change the strategy without creating a new OrderProcessing instance
+  every time, keeping the class flexible and adaptable.
+
+2. Adherence to Open/Closed Principle:
+
+ The Strategy Pattern is about defining a family of algorithms (discount strategies) that 
+ can be selected and changed at runtime. Using the setter method allows the OrderProcessing 
+ class to remain open for extension (new discount types) but closed for modification 
+ (existing code doesn't need to change when adding a new discount).
+
+ If you used the constructor to define the discount strategy, you would have to create a 
+ new instance of OrderProcessing every time you want to change the strategy. This would make
+  the class less flexible and harder to maintain.
+
+3. Separation of Concerns:
+
+ The setDiscountStrategy method allows the responsibility of choosing which discount strategy
+  to apply to be separated from the creation of the OrderProcessing object. This follows the 
+  Single Responsibility Principle, where each class has a clear responsibility.
+
+ The constructor typically handles setting up an object with its initial state, but the 
+ discount strategy may not always be available at the time of object creation. With a setter,
+ the strategy can be set later.
+
+4. Use Case: Strategy Selection Based on Conditions:
+
+ Consider a situation where the discount strategy is not known at the time of object creation 
+ but instead depends on dynamic conditions (such as user input, seasonal promotions, etc.).
+
+ The setter allows you to easily change the strategy at any time without needing to 
+ reinstantiate the entire object. For example:
+    if (isSeasonal) {
+    orderProcessing.setDiscountStrategy(new SeasonalDiscount());
+    } else if (isPromotional) {
+    orderProcessing.setDiscountStrategy(new PromotionalDiscount());
+    }
+

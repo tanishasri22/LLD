@@ -1,0 +1,7 @@
+Expert Scenario –
+ Refactoring for Extendability: You are refactoring an order processing system that 
+ currently applies discounts using a series of conditional statements for different discount 
+ types (seasonal, promotional, clearance, etc.). The system must follow the Open/Closed 
+ Principle so new discount strategies can be added without modifying existing code. How can 
+ the Strategy pattern be applied in this scenario to redesign the discount application mechanism 
+ for better maintainability and ease of extension?

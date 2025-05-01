@@ -1,0 +1,49 @@
+@startuml
+
+' Interfaces
+interface WeatherSubject {
+    +addObserver(observer: DisplayObserver)
+    +removeObserver(observer: DisplayObserver)
+    +notifyObservers()
+}
+
+interface DisplayObserver {
+    +update()
+}
+
+' Concrete Subject class
+class WeatherMonitoringSystem {
+    -observerList: List<DisplayObserver>
+    -temperature: int
+    -humidity: int
+    +getHumidity(): int
+    +getTemperature(): int
+    +addObserver(observer: DisplayObserver)
+    +removeObserver(observer: DisplayObserver)
+    +setData(humidity: int, temperature: int)
+    +notifyObservers()
+}
+
+' Concrete Observer classes
+class IPhoneDisplay {
+    -weatherMonitoringSystem: WeatherMonitoringSystem
+    +update()
+}
+
+class AndroidDisplay {
+    -weatherMonitoringSystem: WeatherMonitoringSystem
+    +update()
+}
+
+' Inheritance relationships
+WeatherMonitoringSystem ..|> WeatherSubject
+IPhoneDisplay ..|> DisplayObserver
+AndroidDisplay ..|> DisplayObserver
+
+' Associations
+WeatherMonitoringSystem o--> DisplayObserver : observers
+IPhoneDisplay o--> WeatherMonitoringSystem
+AndroidDisplay o--> WeatherMonitoringSystem
+
+
+@enduml

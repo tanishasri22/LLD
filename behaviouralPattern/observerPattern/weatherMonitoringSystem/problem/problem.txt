@@ -1,0 +1,7 @@
+ Question:
+ You are designing a simple weather monitoring system. A WeatherData component tracks the 
+ current temperature and humidity. Several display elements (such as a desktop dashboard 
+ and a mobile app) should automatically update whenever the weather data changes. 
+ Problem: How would you design the relationship between the WeatherData component and the 
+ display elements so that the displays are notified of changes without the WeatherData 
+ component being tightly coupled to the display implementations?

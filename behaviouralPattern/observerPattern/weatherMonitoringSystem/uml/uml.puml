@@ -1,49 +1,42 @@
-@startuml
+interface WeatherData {
+    +addObserver(displayObserver: DisplayObserver) : void
+    +removeObserver(displayObserver: DisplayObserver) : void
+    +notifyAllObservers() : void
+    +setData(temp: int, humidity: int, location: String) : void
+    +getTemperature() : int
+    +getHumidity() : int
+    +getLocation() : String
+}
 
-' Interfaces
-interface WeatherSubject {
-    +addObserver(observer: DisplayObserver)
-    +removeObserver(observer: DisplayObserver)
-    +notifyObservers()
+class WeatherDataImpl {
+    -temp: int
+    -humidity: int
+    -location: String
+    -observers: List<DisplayObserver>
+    +addObserver(displayObserver: DisplayObserver) : void
+    +removeObserver(displayObserver: DisplayObserver) : void
+    +notifyAllObservers() : void
+    +setData(temp: int, humidity: int, location: String) : void
+    +getTemperature() : int
+    +getHumidity() : int
+    +getLocation() : String
 }
 
 interface DisplayObserver {
-    +update()
+    +update(weatherData: WeatherData) : void
 }
 
-' Concrete Subject class
-class WeatherMonitoringSystem {
-    -observerList: List<DisplayObserver>
-    -temperature: int
-    -humidity: int
-    +getHumidity(): int
-    +getTemperature(): int
-    +addObserver(observer: DisplayObserver)
-    +removeObserver(observer: DisplayObserver)
-    +setData(humidity: int, temperature: int)
-    +notifyObservers()
+class MobileDisplay {
+    +update(weatherData: WeatherData) : void
 }
 
-' Concrete Observer classes
-class IPhoneDisplay {
-    -weatherMonitoringSystem: WeatherMonitoringSystem
-    +update()
+class DesktopDisplay {
+    +update(weatherData: WeatherData) : void
 }
 
-class AndroidDisplay {
-    -weatherMonitoringSystem: WeatherMonitoringSystem
-    +update()
-}
 
-' Inheritance relationships
-WeatherMonitoringSystem ..|> WeatherSubject
-IPhoneDisplay ..|> DisplayObserver
-AndroidDisplay ..|> DisplayObserver
-
-' Associations
-WeatherMonitoringSystem o--> DisplayObserver : observers
-IPhoneDisplay o--> WeatherMonitoringSystem
-AndroidDisplay o--> WeatherMonitoringSystem
-
-
-@enduml
+WeatherData <|.. WeatherDataImpl
+DisplayObserver <|.. MobileDisplay
+DisplayObserver <|.. DesktopDisplay
+WeatherDataImpl o--> "0..*" DisplayObserver : observers
+DisplayObserver ..> WeatherData : depends on

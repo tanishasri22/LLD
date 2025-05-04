@@ -1,0 +1,60 @@
+@startuml
+
+' Interfaces
+interface OrderSubject {
+    + addObserver(observer: OrderObserver)
+    + removeObserver(observer: OrderObserver)
+    + notifyAllObservers(event: OrderStatusEvent)
+}
+
+interface OrderObserver {
+    + onOrderStatusChanged(event: OrderStatusEvent)
+}
+
+' Event class
+class OrderStatusEvent {
+    - orderId: String
+    - oldStatus: String
+    - newStatus: String
+    + getOrderId(): String
+    + getOldStatus(): String
+    + getNewStatus(): String
+}
+
+' Subject class
+class OrderProcessingService {
+    - observers: ArrayList<OrderObserver>
+    - orderId: String
+    - status: String
+    + OrderProcessingService(orderId: String)
+    + addObserver(observer: OrderObserver)
+    + removeObserver(observer: OrderObserver)
+    + changeOrderStatus(newStatus: String)
+    + notifyAllObservers(event: OrderStatusEvent)
+}
+
+' Observers
+class ShippingService {
+    + onOrderStatusChanged(event: OrderStatusEvent)
+}
+
+class BillingService {
+    + onOrderStatusChanged(event: OrderStatusEvent)
+}
+
+class InventoryService {
+    + onOrderStatusChanged(event: OrderStatusEvent)
+}
+
+' Implementations
+OrderProcessingService ..|> OrderSubject
+ShippingService ..|> OrderObserver
+BillingService ..|> OrderObserver
+InventoryService ..|> OrderObserver
+
+' Associations / Dependencies
+OrderProcessingService o-- OrderObserver : maintains
+OrderProcessingService --> OrderStatusEvent : creates
+OrderObserver --> OrderStatusEvent : uses
+
+@enduml

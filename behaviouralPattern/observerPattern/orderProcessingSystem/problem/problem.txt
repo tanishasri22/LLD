@@ -1,0 +1,8 @@
+Problem:
+ You are tasked with designing an order processing system for an e-commerce platform. 
+ Whenever an order’s status changes (for example, from 'pending' to 'shipped'), multiple
+  components must react. The shipping service needs to prepare the package, the billing 
+  service needs to charge the customer, and the inventory service needs to update stock 
+  levels. Problem: How would you structure the order processing system and its related 
+  components so that each module automatically receives updates about order status changes, 
+  while ensuring that the Order component remains decoupled from those modules?

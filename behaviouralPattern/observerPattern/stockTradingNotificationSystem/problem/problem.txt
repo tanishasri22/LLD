@@ -1,0 +1,8 @@
+Problem:
+ You have a real-time stock trading application where price updates for various stocks arrive
+ concurrently from multiple data feeds. These updates must be broadcast to several components 
+ (such as charting modules, trading algorithms, and logging services). Problem: How would 
+ you design the notification mechanism in this multi-threaded environment to ensure that 
+ listener registration and notification dispatch are thread-safe and efficient? Consider how 
+ to handle a scenario where updates arrive faster than listeners can process them, and how to 
+ prevent a slow or faulty listener from blocking the rest of the system.

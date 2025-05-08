@@ -1,0 +1,46 @@
+@startuml
+
+' Interface
+interface MediaPlayerState {
+    +play(context: MediaPlayerContext): void
+    +pause(context: MediaPlayerContext): void
+    +stop(context: MediaPlayerContext): void
+}
+
+' Concrete States
+class PlayingState {
+    +play(context: MediaPlayerContext): void
+    +pause(context: MediaPlayerContext): void
+    +stop(context: MediaPlayerContext): void
+}
+
+class PausedState {
+    +play(context: MediaPlayerContext): void
+    +pause(context: MediaPlayerContext): void
+    +stop(context: MediaPlayerContext): void
+}
+
+class StoppedState {
+    +play(context: MediaPlayerContext): void
+    +pause(context: MediaPlayerContext): void
+    +stop(context: MediaPlayerContext): void
+}
+
+' Context
+class MediaPlayerContext {
+    -currentState: MediaPlayerState
+    +MediaPlayerContext()
+    +setState(state: MediaPlayerState): void
+    +play(): void
+    +pause(): void
+    +stop(): void
+}
+
+
+' Relationships
+MediaPlayerContext *-- MediaPlayerState : currentState
+PlayingState ..|> MediaPlayerState
+PausedState ..|> MediaPlayerState
+StoppedState ..|> MediaPlayerState
+
+@enduml

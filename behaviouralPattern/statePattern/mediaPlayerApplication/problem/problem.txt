@@ -1,0 +1,9 @@
+1. Basic (Understanding the Pattern)
+Problem Statement:
+ You are designing a media player application that supports playing, pausing, and stopping
+ a song. Each of these states changes the behavior of the player (e.g., pressing "play" 
+ while playing does nothing, pressing "pause" while stopped is invalid).
+
+ Question:
+ How would you use the State Design Pattern to manage the transitions and behavior of the
+ media player across different states?
